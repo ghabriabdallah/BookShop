@@ -1,0 +1,4 @@
+#Sat Dec 03 19:15:44 WEST 2022
+base.0=C\:\\Users\\abdal\\Desktop\\Cours\\Flutter\\TuniBest\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
