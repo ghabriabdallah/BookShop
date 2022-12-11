@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tunibest">
+    package="com.ag.tunibest">
    <application
         android:label="tunibest"
         android:name="${applicationName}"

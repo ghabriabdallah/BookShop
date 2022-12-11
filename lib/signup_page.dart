@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:tunibest/auth_controller.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -10,9 +11,10 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-
     List images =[
       "fb.png",
       "twitter2.png",
@@ -21,6 +23,7 @@ class _SignUpPageState extends State<SignUpPage> {
     double w = MediaQuery.of(context).size.width;
     double h = MediaQuery.of(context).size.height;
     return Scaffold(
+      resizeToAvoidBottomInset : false,
       backgroundColor: Colors.white,
       body: Column(
         children: [
@@ -70,6 +73,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       ]
                   ),
                   child: TextField(
+                    controller: emailController,
                     decoration: InputDecoration(
                         hintText: "Email",
                         prefixIcon: Icon(Icons.email, color: Colors.deepOrangeAccent,),
@@ -108,6 +112,8 @@ class _SignUpPageState extends State<SignUpPage> {
                       ]
                   ),
                   child: TextField(
+                    controller: passwordController,
+                    obscureText: true,
                     decoration: InputDecoration(
                         hintText: "Password",
                         prefixIcon: Icon(Icons.password_outlined, color: Colors.deepOrangeAccent,),
@@ -143,20 +149,25 @@ class _SignUpPageState extends State<SignUpPage> {
             ),
           ),
           SizedBox(height: 30,),
-          Container(
-            width: w*0.5,
-            height: h*0.08,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                image: DecorationImage(
-                  image: AssetImage(
-                      "img/signin.jpg"
-                  ),
-                  fit: BoxFit.cover,
-                )
-            ),
-            child: Center(child: Text("Sign up", style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.white,),)),
+          GestureDetector(
+            onTap: (){
+              AuthController().register(emailController.text.trim(), passwordController.text.trim());
+            },
+            child: Container(
+              width: w*0.5,
+              height: h*0.08,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  image: DecorationImage(
+                    image: AssetImage(
+                        "img/signin.jpg"
+                    ),
+                    fit: BoxFit.cover,
+                  )
+              ),
+              child: Center(child: Text("Sign up", style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.white,),)),
 
+            ),
           ),
           SizedBox(height: 10,),
           RichText(text: TextSpan(

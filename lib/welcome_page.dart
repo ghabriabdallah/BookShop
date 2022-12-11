@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:tunibest/auth_controller.dart';
+import 'myRoutes.dart';
+import 'contactUs.dart';
 class WelcomePage extends StatelessWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+  String email;
+   WelcomePage({Key?  key,required this.email}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +54,7 @@ class WelcomePage extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  "a@a.com",
+                  email,
                   style: TextStyle(
                       fontSize: 18,
                       color: Colors.grey[500]
@@ -60,22 +63,71 @@ class WelcomePage extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 200,),
-          Container(
-            width: w*0.5,
-            height: h*0.08,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30),
-                image: DecorationImage(
-                  image: AssetImage(
-                      "img/signin.jpg"
-                  ),
-                  fit: BoxFit.cover,
-                )
-            ),
-            child: Center(child: Text("Sign out", style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.white,),)),
+          SizedBox(height: 30),
+          GestureDetector(
+            onTap: (){
+              AuthController.instance.logOut();
+            },
+            child: Container(
+              width: w*0.5,
+              height: h*0.08,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  image: DecorationImage(
+                    image: AssetImage(
+                        "img/signin.jpg"
+                    ),
+                    fit: BoxFit.cover,
+                  )
+              ),
+              child: Center(child: Text("Store", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white,),)),
 
+            ),
           ),
+          SizedBox(height: 30),
+          GestureDetector(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => BizCard()));
+            },
+            child: Container(
+              width: w*0.5,
+              height: h*0.08,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  image: DecorationImage(
+                    image: AssetImage(
+                        "img/signin.jpg"
+                    ),
+                    fit: BoxFit.cover,
+                  )
+              ),
+              child: Center(child: Text("Contact Us", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.white,),)),
+
+            ),
+          ),
+          SizedBox(height: 30),
+          GestureDetector(
+            onTap: (){
+              AuthController.instance.logOut();
+            },
+            child: Container(
+              width: w*0.5,
+              height: h*0.08,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  image: DecorationImage(
+                    image: AssetImage(
+                        "img/signin.jpg"
+                    ),
+                    fit: BoxFit.cover,
+                  )
+              ),
+              child: Center(child: Text("Sign out", style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold, color: Colors.white,),)),
+
+            ),
+          ),
+          SizedBox(height: 20),
+          Text("  © جميع الحقوق محفوظة"),
 
         ],
       ),

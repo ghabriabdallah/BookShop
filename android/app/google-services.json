@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "806800337996",
+    "project_id": "fir-getx-app-7b5c4",
+    "storage_bucket": "fir-getx-app-7b5c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806800337996:android:55e2b392ef3aece52198e9",
+        "android_client_info": {
+          "package_name": "com.ag.tunibest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806800337996-4i375u8d4hi0v0tcoik078mqcqbeesr3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlKOVW-54nWM2orbZVxAR5z83pLU_6Fig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "806800337996-4i375u8d4hi0v0tcoik078mqcqbeesr3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "806800337996-r54paqc445tikgnd1skn4d8ab8msisn4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ag.tunibest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

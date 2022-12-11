@@ -1,4 +1,4 @@
-package com.example.tunibest;
+package com.ag.tunibest;
 
 import io.flutter.embedding.android.FlutterActivity;
 
