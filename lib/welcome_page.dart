@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tunibest/auth_controller.dart';
+import 'package:tunibest/firebaseStore.dart';
+import 'package:tunibest/store.dart';
 import 'myRoutes.dart';
 import 'contactUs.dart';
 class WelcomePage extends StatelessWidget {
@@ -66,7 +68,7 @@ class WelcomePage extends StatelessWidget {
           SizedBox(height: 30),
           GestureDetector(
             onTap: (){
-              AuthController.instance.logOut();
+              Navigator.push(context, MaterialPageRoute(builder: (context) => FirebaseStore()));
             },
             child: Container(
               width: w*0.5,
@@ -127,7 +129,6 @@ class WelcomePage extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20),
-          Text("  © جميع الحقوق محفوظة"),
 
         ],
       ),
